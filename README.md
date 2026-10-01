@@ -67,6 +67,17 @@ Migrations run automatically on every run. With `X_DEBUG=true`, OTPs are printed
 docker compose logs -f account-service
 ```
 
+## Connect your desktop
+
+To manage desktops through this stack instead of `api.deskconn.com`, build
+[`deskconn` and `deskconnd`](https://github.com/xconnio/deskconn) with the router's QUIC address (port 8081):
+
+```shell
+make build CLOUD_QUIC_ADDRESS=127.0.0.1:8081   # in the deskconn repo
+```
+
+See [Self-hosting](https://github.com/xconnio/deskconn#self-hosting) in the deskconn README for the full steps.
+
 ## Update
 
 Pulls the newest `latest` images, then restarts on them:
